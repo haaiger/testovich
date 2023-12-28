@@ -8,4 +8,5 @@ export interface ITask {
 /** Действия для редюсера. */
 export type TaskActionType =
     | { type: "ADD_TASK"; payload: string }
+    | { type: "DELETE_TASK"; payload: number }
     | { type: "TOGGLE_TASK"; payload: number };

@@ -18,6 +18,8 @@ export const tasksReducer: Reducer<ITask[], TaskActionType> = (
                     ? { ...task, completed: !task.completed }
                     : task
             );
+        case "DELETE_TASK":
+            return state.filter((task: ITask) => task.id !== action.payload);
         default:
             return state;
     }

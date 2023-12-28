@@ -37,6 +37,11 @@ function TaskList() {
     setNewTask("");
   }
 
+  /** Обработчик удаления задачи. */
+  function handleDeleteTask(id: number) {
+    dispatch({ type: "DELETE_TASK", payload: id });
+  }
+
   return (
     <div>
       <h1>Чек-лист задач</h1>
@@ -58,6 +63,7 @@ function TaskList() {
               onChange={() => toggleTask(task.id)}
             />
             {task.text}
+            <button onClick={() => handleDeleteTask(task.id)}>Удалить</button>
           </li>
         ))}
       </ul>
